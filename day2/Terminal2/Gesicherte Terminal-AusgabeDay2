@@ -1,0 +1,284 @@
+Emiliens-MacBook-Pro:~ michael$ docker run -it -p 8888:8888 -v /Users/Michael:/home/jovyan/work qtlrocks/jwas-docker
+Container must be run with group "root" to update passwd file
+Executing the command: jupyter notebook
+[I 12:44:44.937 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 12:44:54.384 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+[I 12:44:54.385 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 12:44:54.590 NotebookApp] Serving notebooks from local directory: /home/jovyan
+[I 12:44:54.590 NotebookApp] The Jupyter Notebook is running at:
+[I 12:44:54.591 NotebookApp] http://(5a4e3b44819b or 127.0.0.1):8888/?token=f166359ef0d08d55b2fdcaf51a73888a2a53153db1af3be3
+[I 12:44:54.592 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 12:44:54.593 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://(5a4e3b44819b or 127.0.0.1):8888/?token=f166359ef0d08d55b2fdcaf51a73888a2a53153db1af3be3
+[I 12:45:27.418 NotebookApp] 302 GET / (172.17.0.1) 0.84ms
+[I 12:45:27.709 NotebookApp] 302 GET /tree? (172.17.0.1) 2.22ms
+[I 12:46:20.828 NotebookApp] 302 POST /login?next=%2Ftree%3F (172.17.0.1) 2.46ms
+[I 12:47:22.164 NotebookApp] Writing notebook-signing key to /home/jovyan/.local/share/jupyter/notebook_secret
+[W 12:47:22.178 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[I 12:47:27.053 NotebookApp] Kernel started: ac0c5d9d-2701-4a12-8f83-0fbd6c00e7e7
+[ Info: Recompiling stale cache file /opt/julia/compiled/v1.0/IJulia/nfu7T.ji for IJulia [7073ff75-c697-5162-941a-fcdaad2a7d2a]
+Starting kernel event loops.
+[I 12:47:55.972 NotebookApp] Adapting to protocol v5.0 for kernel ac0c5d9d-2701-4a12-8f83-0fbd6c00e7e7
+[I 12:49:26.652 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[W 12:49:26.657 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[I 12:51:26.850 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[W 12:51:26.854 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[I 12:59:26.950 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[W 12:59:26.953 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[W 12:59:37.726 NotebookApp] Notebook work/Documents/Julia/day2/dataSimulation.ipynb is not trusted
+[I 12:59:39.777 NotebookApp] Kernel started: 6383f955-88dd-4a4f-aaea-f489cfbd5739
+Starting kernel event loops.
+[I 12:59:47.828 NotebookApp] Adapting to protocol v5.0 for kernel 6383f955-88dd-4a4f-aaea-f489cfbd5739
+[I 13:01:42.693 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 13:03:42.619 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 13:05:42.479 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 13:05:50.176 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[W 13:05:50.210 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[I 13:09:50.108 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[W 13:09:50.116 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[I 13:11:41.363 NotebookApp] Starting buffering for 6383f955-88dd-4a4f-aaea-f489cfbd5739:56545d665ebd4dedaf9c9710b8944046
+[W 13:15:50.026 NotebookApp] Forbidden
+[W 13:15:50.028 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day2/XSimMating.ipynb?content=0&_=1543927640649 (172.17.0.1) 4.25ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day2/XSimMating.ipynb
+[W 13:15:50.126 NotebookApp] Forbidden
+[W 13:15:50.127 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day2/XSimMating.ipynb (172.17.0.1) 32.44ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day2/XSimMating.ipynb
+[W 13:17:50.011 NotebookApp] Forbidden
+[W 13:17:50.014 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day2/XSimMating.ipynb?content=0&_=1543927640650 (172.17.0.1) 4.46ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day2/XSimMating.ipynb
+[W 13:17:50.100 NotebookApp] Forbidden
+[W 13:17:50.101 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day2/XSimMating.ipynb (172.17.0.1) 34.59ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day2/XSimMating.ipynb
+[W 13:19:49.999 NotebookApp] Forbidden
+[W 13:19:50.005 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day2/XSimMating.ipynb?content=0&_=1543927640651 (172.17.0.1) 10.85ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day2/XSimMating.ipynb
+[W 13:19:50.033 NotebookApp] Forbidden
+[W 13:19:50.035 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day2/XSimMating.ipynb (172.17.0.1) 5.51ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day2/XSimMating.ipynb
+[W 13:20:13.535 NotebookApp] Forbidden
+[W 13:20:13.540 NotebookApp] 403 GET /api/sessions?_=1543927581773 (172.17.0.1) 6.62ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:20:13.546 NotebookApp] Forbidden
+[W 13:20:13.548 NotebookApp] 403 GET /api/terminals?_=1543927581774 (172.17.0.1) 4.07ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[I 13:20:18.288 NotebookApp] 302 GET /tree/work/Documents/Julia/day2 (172.17.0.1) 3.62ms
+[I 13:20:47.549 NotebookApp] 302 POST /login?next=%2Ftree%2Fwork%2FDocuments%2FJulia%2Fday2 (172.17.0.1) 2.80ms
+[I 13:21:12.672 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 13:21:18.840 NotebookApp] Adapting to protocol v5.0 for kernel ac0c5d9d-2701-4a12-8f83-0fbd6c00e7e7
+[I 13:21:29.236 NotebookApp] Kernel shutdown: 6383f955-88dd-4a4f-aaea-f489cfbd5739
+[I 13:23:18.782 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[W 13:24:11.587 NotebookApp] delete /work/Documents/Julia/day2/reformattedMarkerDataChrom1-2
+[I 13:25:18.734 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 13:27:18.726 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 13:28:08.521 NotebookApp] Starting buffering for ac0c5d9d-2701-4a12-8f83-0fbd6c00e7e7:60d1cbbb88ba4763a7c15cb4ced4ba57
+[W 13:28:12.896 NotebookApp] Forbidden
+[W 13:28:12.899 NotebookApp] 403 GET /api/sessions?_=1543929806205 (172.17.0.1) 7.35ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:28:12.904 NotebookApp] Forbidden
+[W 13:28:12.908 NotebookApp] 403 GET /api/terminals?_=1543929806206 (172.17.0.1) 5.13ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:28:16.337 NotebookApp] 403 POST /api/shutdown (172.17.0.1) 116.19ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:28:36.819 NotebookApp] Forbidden
+[W 13:28:36.821 NotebookApp] 403 DELETE /api/sessions/504e8c09-0afd-4e3f-8be0-1ae499b0cea2 (172.17.0.1) 2.79ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:28:50.544 NotebookApp] Forbidden
+[W 13:28:50.546 NotebookApp] 403 DELETE /api/sessions/504e8c09-0afd-4e3f-8be0-1ae499b0cea2 (172.17.0.1) 3.46ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:28:50.552 NotebookApp] Forbidden
+[W 13:28:50.554 NotebookApp] 403 DELETE /api/contents/work/Documents/Julia/day2/XSimMating.ipynb (172.17.0.1) 3.64ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:29:02.374 NotebookApp] Forbidden
+[W 13:29:02.376 NotebookApp] 403 DELETE /api/sessions/504e8c09-0afd-4e3f-8be0-1ae499b0cea2 (172.17.0.1) 2.62ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:29:12.891 NotebookApp] Forbidden
+[W 13:29:12.892 NotebookApp] 403 GET /api/sessions?_=1543929806207 (172.17.0.1) 2.14ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:29:12.895 NotebookApp] Forbidden
+[W 13:29:12.895 NotebookApp] 403 GET /api/terminals?_=1543929806208 (172.17.0.1) 1.99ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:29:19.342 NotebookApp] Forbidden
+[W 13:29:19.342 NotebookApp] 403 DELETE /api/sessions/504e8c09-0afd-4e3f-8be0-1ae499b0cea2 (172.17.0.1) 1.41ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:29:39.869 NotebookApp] Forbidden
+[W 13:29:39.870 NotebookApp] 403 DELETE /api/sessions/504e8c09-0afd-4e3f-8be0-1ae499b0cea2 (172.17.0.1) 1.46ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+^C[I 13:29:53.134 NotebookApp] interrupted
+Serving notebooks from local directory: /home/jovyan
+1 active kernel
+The Jupyter Notebook is running at:
+http://(5a4e3b44819b or 127.0.0.1):8888/?token=f166359ef0d08d55b2fdcaf51a73888a2a53153db1af3be3
+Shutdown this notebook server (y/[n])? ^C[C 13:29:53.649 NotebookApp] received signal 2, stopping
+[I 13:29:53.652 NotebookApp] Shutting down 1 kernel
+No answer for 5s: resuming operation...
+[I 13:29:59.352 NotebookApp] Kernel shutdown: ac0c5d9d-2701-4a12-8f83-0fbd6c00e7e7
+Emiliens-MacBook-Pro:~ michael$ docker run -it --rm -p 8888:8888 -v /Users/Michael:/home/jovyan/work qtlrocks/jwas-docker
+Container must be run with group "root" to update passwd file
+Executing the command: jupyter notebook
+[I 13:31:37.423 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 13:31:38.092 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+[I 13:31:38.093 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 13:31:38.225 NotebookApp] Serving notebooks from local directory: /home/jovyan
+[I 13:31:38.225 NotebookApp] The Jupyter Notebook is running at:
+[I 13:31:38.225 NotebookApp] http://(7d91592c49f1 or 127.0.0.1):8888/?token=4b5ffb5f57c03720b2d7be0f639333914982aeb3c9a354ed
+[I 13:31:38.225 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 13:31:38.227 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://(7d91592c49f1 or 127.0.0.1):8888/?token=4b5ffb5f57c03720b2d7be0f639333914982aeb3c9a354ed
+[I 13:32:04.975 NotebookApp] 302 GET / (172.17.0.1) 1.49ms
+[I 13:32:04.984 NotebookApp] 302 GET /tree? (172.17.0.1) 1.56ms
+[I 13:32:12.879 NotebookApp] 302 POST /login?next=%2Ftree%3F (172.17.0.1) 1.64ms
+[I 13:32:42.864 NotebookApp] Writing notebook-signing key to /home/jovyan/.local/share/jupyter/notebook_secret
+[W 13:32:42.869 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[W 13:32:43.143 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[I 13:32:45.279 NotebookApp] Kernel started: 14e396cb-f96e-4f8d-a736-4945c7c1e3c7
+[ Info: Recompiling stale cache file /opt/julia/compiled/v1.0/IJulia/nfu7T.ji for IJulia [7073ff75-c697-5162-941a-fcdaad2a7d2a]
+Starting kernel event loops.
+[I 13:32:58.582 NotebookApp] Adapting to protocol v5.0 for kernel 14e396cb-f96e-4f8d-a736-4945c7c1e3c7
+[I 13:34:45.221 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 13:36:37.059 NotebookApp] Starting buffering for 14e396cb-f96e-4f8d-a736-4945c7c1e3c7:5f2b48b929694ee18cbc33265feb24d2
+[W 13:36:44.375 NotebookApp] Forbidden
+[W 13:36:44.377 NotebookApp] 403 GET /api/sessions?_=1543930333053 (172.17.0.1) 3.19ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:36:44.385 NotebookApp] Forbidden
+[W 13:36:44.386 NotebookApp] 403 GET /api/terminals?_=1543930333054 (172.17.0.1) 2.45ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:37:09.080 NotebookApp] Forbidden
+[W 13:37:09.081 NotebookApp] 403 DELETE /api/contents/work/Documents/Julia/day2/XSimMating.ipynb (172.17.0.1) 1.59ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:37:44.383 NotebookApp] Forbidden
+[W 13:37:44.384 NotebookApp] 403 GET /api/sessions?_=1543930333055 (172.17.0.1) 2.54ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:37:44.392 NotebookApp] Forbidden
+[W 13:37:44.394 NotebookApp] 403 GET /api/terminals?_=1543930333056 (172.17.0.1) 2.47ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:38:07.354 NotebookApp] Forbidden
+[W 13:38:07.356 NotebookApp] 403 DELETE /api/contents/work/Documents/Julia/day2/XSimMating.ipynb (172.17.0.1) 3.09ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:38:15.017 NotebookApp] 403 POST /api/shutdown (172.17.0.1) 12.34ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:38:44.382 NotebookApp] Forbidden
+[W 13:38:44.384 NotebookApp] 403 GET /api/sessions?_=1543930333057 (172.17.0.1) 4.56ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:38:44.390 NotebookApp] Forbidden
+[W 13:38:44.392 NotebookApp] 403 GET /api/terminals?_=1543930333058 (172.17.0.1) 3.12ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[I 13:39:20.947 NotebookApp] 302 GET /notebooks/work/Documents/Julia/day2/XSimMating.ipynb (172.17.0.1) 1.10ms
+[W 13:39:25.878 NotebookApp] Forbidden
+[W 13:39:25.880 NotebookApp] 403 GET /api/sessions?_=1543930333059 (172.17.0.1) 3.35ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 13:39:25.884 NotebookApp] Forbidden
+[W 13:39:25.886 NotebookApp] 403 GET /api/terminals?_=1543930333060 (172.17.0.1) 2.85ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+^C[I 13:44:30.392 NotebookApp] interrupted
+Serving notebooks from local directory: /home/jovyan
+1 active kernel
+The Jupyter Notebook is running at:
+http://(7d91592c49f1 or 127.0.0.1):8888/?token=4b5ffb5f57c03720b2d7be0f639333914982aeb3c9a354ed
+Shutdown this notebook server (y/[n])? ^C[C 13:44:31.521 NotebookApp] received signal 2, stopping
+[I 13:44:31.524 NotebookApp] Shutting down 1 kernel
+No answer for 5s: resuming operation...
+[I 13:44:36.815 NotebookApp] Kernel shutdown: 14e396cb-f96e-4f8d-a736-4945c7c1e3c7
+Emiliens-MacBook-Pro:~ michael$ docker run -it --rm -p 8888:8888 -v /Users/Michael:/home/jovyan/work qtlrocks/jwas-docker
+Container must be run with group "root" to update passwd file
+Executing the command: jupyter notebook
+[I 13:47:01.206 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 13:47:01.608 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+[I 13:47:01.608 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 13:47:01.623 NotebookApp] Serving notebooks from local directory: /home/jovyan
+[I 13:47:01.623 NotebookApp] The Jupyter Notebook is running at:
+[I 13:47:01.623 NotebookApp] http://(5dcbb89bb5e7 or 127.0.0.1):8888/?token=73fcbe7390ba10fb6b95ec2903ddc92093e1caf37741d42c
+[I 13:47:01.623 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 13:47:01.625 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://(5dcbb89bb5e7 or 127.0.0.1):8888/?token=73fcbe7390ba10fb6b95ec2903ddc92093e1caf37741d42c
+ERRO[0052] error waiting for container: EOF             
+Emiliens-MacBook-Pro:~ michael$ docker run -it -p 8888:8888 -v /Users/Michael:/home/jovyan/work qtlrocks/jwas-docker
+Container must be run with group "root" to update passwd file
+Executing the command: jupyter notebook
+[I 13:55:31.587 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 13:55:34.850 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+[I 13:55:34.851 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 13:55:35.090 NotebookApp] Serving notebooks from local directory: /home/jovyan
+[I 13:55:35.090 NotebookApp] The Jupyter Notebook is running at:
+[I 13:55:35.091 NotebookApp] http://(f6a76a0a96b5 or 127.0.0.1):8888/?token=57f75aac52a19acce483f23d883bb6edbe93533819b6bec2
+[I 13:55:35.091 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 13:55:35.093 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://(f6a76a0a96b5 or 127.0.0.1):8888/?token=57f75aac52a19acce483f23d883bb6edbe93533819b6bec2
+[I 13:56:10.213 NotebookApp] 302 POST /login?next=%2F (172.17.0.1) 4.25ms
+[I 13:56:10.279 NotebookApp] 302 GET / (172.17.0.1) 4.00ms
+[I 13:57:17.053 NotebookApp] Writing notebook-signing key to /home/jovyan/.local/share/jupyter/notebook_secret
+[W 13:57:17.072 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[I 13:57:20.290 NotebookApp] Kernel started: 53defe9e-5431-401b-8b83-5e0a754ab2e3
+[ Info: Recompiling stale cache file /opt/julia/compiled/v1.0/IJulia/nfu7T.ji for IJulia [7073ff75-c697-5162-941a-fcdaad2a7d2a]
+Starting kernel event loops.
+[I 13:57:46.294 NotebookApp] Adapting to protocol v5.0 for kernel 53defe9e-5431-401b-8b83-5e0a754ab2e3
+[I 13:59:20.129 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[W 13:59:20.133 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[I 14:03:20.111 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[W 14:03:20.115 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[I 14:05:20.214 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[W 14:05:20.218 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[I 14:07:20.825 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[W 14:07:20.831 NotebookApp] Notebook work/Documents/Julia/day2/XSimMating.ipynb is not trusted
+[I 14:08:38.839 NotebookApp] Starting buffering for 53defe9e-5431-401b-8b83-5e0a754ab2e3:54e466f45bea4eaa8da0330cd297191c
+[I 14:08:44.488 NotebookApp] Kernel restarted: 53defe9e-5431-401b-8b83-5e0a754ab2e3
+Starting kernel event loops.
+[I 14:08:51.596 NotebookApp] Adapting to protocol v5.0 for kernel 53defe9e-5431-401b-8b83-5e0a754ab2e3
+[I 14:08:51.602 NotebookApp] Restoring connection for 53defe9e-5431-401b-8b83-5e0a754ab2e3:54e466f45bea4eaa8da0330cd297191c
+[I 14:08:51.604 NotebookApp] Replaying 3 buffered messages
+[I 14:09:20.091 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 14:11:20.011 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 14:13:20.194 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 14:15:20.072 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 14:17:20.015 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 14:19:19.989 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 14:21:20.029 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 14:23:20.026 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 14:25:20.218 NotebookApp] Saving file at /work/Documents/Julia/day2/XSimMating.ipynb
+[I 14:26:28.703 NotebookApp] Starting buffering for 53defe9e-5431-401b-8b83-5e0a754ab2e3:54e466f45bea4eaa8da0330cd297191c
+[W 14:26:44.054 NotebookApp] Forbidden
+[W 14:26:44.057 NotebookApp] 403 GET /api/sessions?_=1543931770889 (172.17.0.1) 24.93ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 14:26:44.070 NotebookApp] Forbidden
+[W 14:26:44.072 NotebookApp] 403 GET /api/terminals?_=1543931770890 (172.17.0.1) 2.92ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 14:27:08.687 NotebookApp] Forbidden
+[W 14:27:08.688 NotebookApp] 403 GET /api/config/notebook?_=1543928377400 (172.17.0.1) 43.58ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day2/dataSimulation.ipynb
+[W 14:27:08.692 NotebookApp] Forbidden
+[W 14:27:08.693 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day2/dataSimulation.ipynb/checkpoints?_=1543928377403 (172.17.0.1) 3.21ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day2/dataSimulation.ipynb
+[W 14:27:08.764 NotebookApp] Forbidden
+[W 14:27:08.766 NotebookApp] 403 GET /api/config/common?_=1543928377401 (172.17.0.1) 1.99ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day2/dataSimulation.ipynb
+[I 14:27:08.868 NotebookApp] 302 GET /notebooks/work/Documents/Julia/day2/dataSimulation.ipynb (172.17.0.1) 99.94ms
+[W 14:27:08.909 NotebookApp] Forbidden
+[W 14:27:08.911 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day2/dataSimulation.ipynb?type=notebook&_=1543928377402 (172.17.0.1) 2.47ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day2/dataSimulation.ipynb
+[I 14:27:49.135 NotebookApp] 302 POST /login?next=%2Fnotebooks%2Fwork%2FDocuments%2FJulia%2Fday2%2FdataSimulation.ipynb (172.17.0.1) 144.60ms
+[W 14:27:56.836 NotebookApp] Notebook work/Documents/Julia/day2/dataSimulation.ipynb is not trusted
+[I 14:27:59.649 NotebookApp] Kernel started: e7f200f4-afed-402c-96f5-65f7450a27d7
+Starting kernel event loops.
+[I 14:28:11.074 NotebookApp] Adapting to protocol v5.0 for kernel e7f200f4-afed-402c-96f5-65f7450a27d7
+[I 14:29:59.435 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[W 14:29:59.444 NotebookApp] Notebook work/Documents/Julia/day2/dataSimulation.ipynb is not trusted
+[I 14:32:01.091 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 14:34:00.002 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 14:35:59.801 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 14:37:59.440 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 14:39:59.396 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 14:41:59.503 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 14:43:59.591 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 14:46:00.215 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[W 14:46:33.270 NotebookApp] 404 GET /files/work/Documents/Julia/day2/reveal.js/css/reveal.css (172.17.0.1) 370.45ms referer=http://localhost:8888/files/work/Documents/Julia/day2/dataSimulation.slides.html
+[W 14:46:33.293 NotebookApp] 404 GET /files/work/Documents/Julia/day2/custom.css (172.17.0.1) 13.93ms referer=http://localhost:8888/files/work/Documents/Julia/day2/dataSimulation.slides.html
+[W 14:46:33.312 NotebookApp] 404 GET /files/work/Documents/Julia/day2/reveal.js/css/theme/simple.css (172.17.0.1) 13.99ms referer=http://localhost:8888/files/work/Documents/Julia/day2/dataSimulation.slides.html
+[W 14:46:35.342 NotebookApp] 404 GET /files/work/Documents/Julia/day2/reveal.js/lib/js/head.min.js (172.17.0.1) 13.76ms referer=http://localhost:8888/files/work/Documents/Julia/day2/dataSimulation.slides.html
+[W 14:46:35.358 NotebookApp] 404 GET /files/work/Documents/Julia/day2/reveal.js/js/reveal.js (172.17.0.1) 12.34ms referer=http://localhost:8888/files/work/Documents/Julia/day2/dataSimulation.slides.html
+[I 14:47:59.810 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 15:04:19.800 NotebookApp] Saving file at /work/Documents/Julia/day2/dataSimulation.ipynb
+[I 15:04:41.643 NotebookApp] Starting buffering for e7f200f4-afed-402c-96f5-65f7450a27d7:73e14e040d944aa18f96fc167bcf8b37
+[I 15:05:03.379 NotebookApp] Adapting to protocol v5.0 for kernel 53defe9e-5431-401b-8b83-5e0a754ab2e3
+[I 15:05:20.871 NotebookApp] Kernel shutdown: e7f200f4-afed-402c-96f5-65f7450a27d7
+[I 15:24:37.608 NotebookApp] Starting buffering for 53defe9e-5431-401b-8b83-5e0a754ab2e3:9ea463fc976e4cb7804128bc5ee3582c
+[W 15:24:41.377 NotebookApp] Forbidden
+[W 15:24:41.378 NotebookApp] 403 GET /api/sessions?_=1543931770944 (172.17.0.1) 3.16ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 15:24:41.386 NotebookApp] Forbidden
+[W 15:24:41.388 NotebookApp] 403 GET /api/terminals?_=1543931770945 (172.17.0.1) 3.07ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 15:24:53.782 NotebookApp] Forbidden
+[W 15:24:53.783 NotebookApp] 403 DELETE /api/sessions/ee6fcbac-4d58-43f8-ae89-ada68927afb9 (172.17.0.1) 2.45ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 15:24:57.283 NotebookApp] Forbidden
+[W 15:24:57.284 NotebookApp] 403 DELETE /api/sessions/ee6fcbac-4d58-43f8-ae89-ada68927afb9 (172.17.0.1) 1.75ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 15:25:40.647 NotebookApp] Forbidden
+[W 15:25:40.649 NotebookApp] 403 DELETE /api/sessions/ee6fcbac-4d58-43f8-ae89-ada68927afb9 (172.17.0.1) 2.46ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 15:25:41.379 NotebookApp] Forbidden
+[W 15:25:41.380 NotebookApp] 403 GET /api/sessions?_=1543931770946 (172.17.0.1) 2.12ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 15:25:41.384 NotebookApp] Forbidden
+[W 15:25:41.385 NotebookApp] 403 GET /api/terminals?_=1543931770947 (172.17.0.1) 1.67ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+[W 15:25:48.907 NotebookApp] Forbidden
+[W 15:25:48.909 NotebookApp] 403 DELETE /api/sessions/ee6fcbac-4d58-43f8-ae89-ada68927afb9 (172.17.0.1) 2.02ms referer=http://localhost:8888/tree/work/Documents/Julia/day2
+^C[I 15:26:28.135 NotebookApp] interrupted
+Serving notebooks from local directory: /home/jovyan
+1 active kernel
+The Jupyter Notebook is running at:
+http://(f6a76a0a96b5 or 127.0.0.1):8888/?token=57f75aac52a19acce483f23d883bb6edbe93533819b6bec2
+Shutdown this notebook server (y/[n])? ^C[C 15:26:28.615 NotebookApp] received signal 2, stopping
+[I 15:26:28.703 NotebookApp] Shutting down 1 kernel
+No answer for 5s: resuming operation...
+[I 15:26:58.662 NotebookApp] Kernel shutdown: 53defe9e-5431-401b-8b83-5e0a754ab2e3
+Emiliens-MacBook-Pro:~ michael$ 

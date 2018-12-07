@@ -1,0 +1,487 @@
+Last login: Mon Dec  3 08:50:23 on console
+Emiliens-MacBook-Pro:~ michael$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                   PORTS               NAMES
+43b25c3923ea        hello-world         "/hello"            8 hours ago         Exited (0) 8 hours ago                       kind_austin
+Emiliens-MacBook-Pro:~ michael$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              4ab4c602aa5e        2 months ago        1.84kB
+Emiliens-MacBook-Pro:~ michael$ docker run ubuntu
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+32802c0cfa4d: Pull complete 
+da1315cffa03: Pull complete 
+fa83472a3562: Pull complete 
+f85999a86bef: Pull complete 
+Digest: sha256:6d0e0c26489e33f5a6f0020edface2727db9489744ecc9b4f50c7fa671f23c49
+Status: Downloaded newer image for ubuntu:latest
+Emiliens-MacBook-Pro:~ michael$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS                          PORTS               NAMES
+24ebaab67757        ubuntu              "/bin/bash"         About a minute ago   Exited (0) About a minute ago                       eloquent_ishizaka
+43b25c3923ea        hello-world         "/hello"            8 hours ago          Exited (0) 8 hours ago                              kind_austin
+Emiliens-MacBook-Pro:~ michael$ docker run -itd ubuntu
+36b4fd6ec423a347e93f2be2937dbab7fb7dd509fe67a5129a195cb35d5da454
+Emiliens-MacBook-Pro:~ michael$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+36b4fd6ec423        ubuntu              "/bin/bash"         26 seconds ago      Up 24 seconds                                  heuristic_hellman
+24ebaab67757        ubuntu              "/bin/bash"         2 minutes ago       Exited (0) 2 minutes ago                       eloquent_ishizaka
+43b25c3923ea        hello-world         "/hello"            8 hours ago         Exited (0) 8 hours ago                         kind_austin
+Emiliens-MacBook-Pro:~ michael$ docker exec -it 36b4fd6ec423 bash
+root@36b4fd6ec423:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@36b4fd6ec423:/# exit
+exit
+Emiliens-MacBook-Pro:~ michael$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+36b4fd6ec423        ubuntu              "/bin/bash"         2 minutes ago       Up 2 minutes                                   heuristic_hellman
+24ebaab67757        ubuntu              "/bin/bash"         5 minutes ago       Exited (0) 5 minutes ago                       eloquent_ishizaka
+43b25c3923ea        hello-world         "/hello"            8 hours ago         Exited (0) 8 hours ago                         kind_austin
+Emiliens-MacBook-Pro:~ michael$ docker exec -it 36b4fd6ec423 bash
+root@36b4fd6ec423:/# mkdir MYDIR
+root@36b4fd6ec423:/# ls
+MYDIR  bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@36b4fd6ec423:/# exit
+exit
+Emiliens-MacBook-Pro:~ michael$ docker stop 36b4fd6ec423
+36b4fd6ec423
+Emiliens-MacBook-Pro:~ michael$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+36b4fd6ec423        ubuntu              "/bin/bash"         5 minutes ago       Exited (0) 29 seconds ago                       heuristic_hellman
+24ebaab67757        ubuntu              "/bin/bash"         8 minutes ago       Exited (0) 8 minutes ago                        eloquent_ishizaka
+43b25c3923ea        hello-world         "/hello"            8 hours ago         Exited (0) 8 hours ago                          kind_austin
+Emiliens-MacBook-Pro:~ michael$ docker start -i 36b4fd6ec423
+root@36b4fd6ec423:/# ls
+MYDIR  bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@36b4fd6ec423:/# exit
+exit
+Emiliens-MacBook-Pro:~ michael$ docker run -itd ubuntu
+645d2595c6d3054f5a09703b12a6e4d3c2660fb420849ba16988d3087e30b309
+Emiliens-MacBook-Pro:~ michael$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                          PORTS               NAMES
+645d2595c6d3        ubuntu              "/bin/bash"         21 seconds ago      Up 20 seconds                                       practical_sinoussi
+36b4fd6ec423        ubuntu              "/bin/bash"         8 minutes ago       Exited (0) About a minute ago                       heuristic_hellman
+24ebaab67757        ubuntu              "/bin/bash"         10 minutes ago      Exited (0) 10 minutes ago                           eloquent_ishizaka
+43b25c3923ea        hello-world         "/hello"            8 hours ago         Exited (0) 8 hours ago                              kind_austin
+Emiliens-MacBook-Pro:~ michael$ docker run --rm -it ubuntu bash
+root@27b2323fef43:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@27b2323fef43:/# mkdir MODIR
+root@27b2323fef43:/# ls
+MODIR  bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@27b2323fef43:/# exit
+exit
+Emiliens-MacBook-Pro:~ michael$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+645d2595c6d3        ubuntu              "/bin/bash"         5 minutes ago       Up 5 minutes                                    practical_sinoussi
+36b4fd6ec423        ubuntu              "/bin/bash"         13 minutes ago      Exited (0) 6 minutes ago                        heuristic_hellman
+24ebaab67757        ubuntu              "/bin/bash"         16 minutes ago      Exited (0) 16 minutes ago                       eloquent_ishizaka
+43b25c3923ea        hello-world         "/hello"            9 hours ago         Exited (0) 9 hours ago                          kind_austin
+Emiliens-MacBook-Pro:~ michael$ docker run --rm -it -v ~/Desktop/MYDATA/:/MYDir ubuntu bash
+root@98e554a63ef4:/# exit
+exit
+Emiliens-MacBook-Pro:~ michael$ docker pull qtlrocks/jwas-docker
+Using default tag: latest
+latest: Pulling from qtlrocks/jwas-docker
+a48c500ed24e: Pull complete 
+1e1de00ff7e1: Pull complete 
+0330ca45a200: Pull complete 
+471db38bcfbf: Pull complete 
+0b4aba487617: Pull complete 
+27261a5cbf78: Pull complete 
+2773b009b29a: Pull complete 
+0915dfd6dae3: Pull complete 
+ee7dca77f9ed: Pull complete 
+cf5be5e11621: Pull complete 
+33aa38e94d28: Pull complete 
+68f4b2245d2a: Pull complete 
+f5ab1b831f77: Pull complete 
+7ba257ca073a: Pull complete 
+0eb8f950b3ea: Pull complete 
+7774c2ec4751: Pull complete 
+2b9f5766a263: Pull complete 
+e4052009a673: Pull complete 
+f9e7255ce189: Pull complete 
+267a2399516f: Pull complete 
+3b54695138ea: Pull complete 
+d23336e5273c: Pull complete 
+e612b1583510: Pull complete 
+35ccca5c04fe: Pull complete 
+89cf804a40ff: Pull complete 
+81cdf7ccfcd1: Pull complete 
+2d79f9fc672b: Pull complete 
+e68a6f6ec56b: Pull complete 
+889930c80fd2: Pull complete 
+3741bb9cc93f: Pull complete 
+4f5fb6a590db: Pull complete 
+Digest: sha256:7de7a834417399fc48d5a38ccec55297ac40fa623253c5e0650d1ce628655f80
+Status: Downloaded newer image for qtlrocks/jwas-docker:latest
+Emiliens-MacBook-Pro:~ michael$ docker run -it --rm -p 888:888 -v /Users/Michael/documents/JuliaCourse/dataDay1:/home/jovyan/work qtlrocks/jwas-docker
+Container must be run with group "root" to update passwd file
+Executing the command: jupyter notebook
+[I 10:37:50.794 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 10:37:52.967 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+[I 10:37:52.967 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 10:37:53.007 NotebookApp] Serving notebooks from local directory: /home/jovyan
+[I 10:37:53.007 NotebookApp] The Jupyter Notebook is running at:
+[I 10:37:53.008 NotebookApp] http://(8147b8c18c88 or 127.0.0.1):8888/?token=d75146e94b6c721c2564d4f03def30337d8aa3d66f935864
+[I 10:37:53.009 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 10:37:53.011 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://(8147b8c18c88 or 127.0.0.1):8888/?token=d75146e94b6c721c2564d4f03def30337d8aa3d66f935864
+^C[I 10:43:13.265 NotebookApp] interrupted
+Serving notebooks from local directory: /home/jovyan
+0 active kernels
+The Jupyter Notebook is running at:
+http://(8147b8c18c88 or 127.0.0.1):8888/?token=d75146e94b6c721c2564d4f03def30337d8aa3d66f935864
+Shutdown this notebook server (y/[n])? y
+[C 10:43:16.672 NotebookApp] Shutdown confirmed
+[I 10:43:16.674 NotebookApp] Shutting down 0 kernels
+Emiliens-MacBook-Pro:~ michael$ docker run -it --rm -p 8888:8888 -v /Users/Michael/documents/JuliaCourse/dataDay1:/home/jovyan/work qtlrocks/jwas-docker
+Container must be run with group "root" to update passwd file
+Executing the command: jupyter notebook
+[I 10:43:38.582 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 10:43:38.920 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+[I 10:43:38.920 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 10:43:38.937 NotebookApp] Serving notebooks from local directory: /home/jovyan
+[I 10:43:38.937 NotebookApp] The Jupyter Notebook is running at:
+[I 10:43:38.938 NotebookApp] http://(65976902e70e or 127.0.0.1):8888/?token=b7b7866fdf23b94a5259fe44b838c6dee35aecc17e9d650f
+[I 10:43:38.938 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 10:43:38.939 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://(65976902e70e or 127.0.0.1):8888/?token=b7b7866fdf23b94a5259fe44b838c6dee35aecc17e9d650f
+[I 10:44:13.598 NotebookApp] 302 GET / (172.17.0.1) 1.03ms
+[I 10:44:13.608 NotebookApp] 302 GET /tree? (172.17.0.1) 1.85ms
+[I 10:44:26.462 NotebookApp] 302 POST /login?next=%2Ftree%3F (172.17.0.1) 2.38ms
+[I 10:44:45.485 NotebookApp] Shutting down on /api/shutdown request.
+[I 10:44:45.489 NotebookApp] Shutting down 0 kernels
+Emiliens-MacBook-Pro:~ michael$ 
+Emiliens-MacBook-Pro:~ michael$ 
+Emiliens-MacBook-Pro:~ michael$ 
+Emiliens-MacBook-Pro:~ michael$ docker run -it --rm -p 8888:8888 -v /Users/Michael:/home/jovyan/work qtlrocks/jwas-docker
+Container must be run with group "root" to update passwd file
+Executing the command: jupyter notebook
+[I 10:46:34.563 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 10:46:34.916 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+[I 10:46:34.917 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 10:46:34.929 NotebookApp] Serving notebooks from local directory: /home/jovyan
+[I 10:46:34.930 NotebookApp] The Jupyter Notebook is running at:
+[I 10:46:34.930 NotebookApp] http://(a4651d4ec41d or 127.0.0.1):8888/?token=568c1539677ae5c4c4cd4de1a9b84d38021ae94c4010d1ca
+[I 10:46:34.930 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 10:46:34.932 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://(a4651d4ec41d or 127.0.0.1):8888/?token=568c1539677ae5c4c4cd4de1a9b84d38021ae94c4010d1ca
+[W 10:46:54.658 NotebookApp] Clearing invalid/expired login cookie username-localhost-8888
+[W 10:46:54.660 NotebookApp] Clearing invalid/expired login cookie username-localhost-8888
+[I 10:46:54.661 NotebookApp] 302 GET /tree/work (172.17.0.1) 3.87ms
+[I 10:47:04.741 NotebookApp] 302 POST /login?next=%2Ftree%2Fwork (172.17.0.1) 2.84ms
+[I 10:58:39.769 NotebookApp] Creating new notebook in /work/Desktop
+[I 10:58:39.944 NotebookApp] Writing notebook-signing key to /home/jovyan/.local/share/jupyter/notebook_secret
+[I 10:58:47.251 NotebookApp] Kernel started: 8248ecf3-ea0b-4e87-921c-781bafd59cef
+[ Info: Recompiling stale cache file /opt/julia/compiled/v1.0/IJulia/nfu7T.ji for IJulia [7073ff75-c697-5162-941a-fcdaad2a7d2a]
+Starting kernel event loops.
+[I 10:59:16.846 NotebookApp] Adapting to protocol v5.0 for kernel 8248ecf3-ea0b-4e87-921c-781bafd59cef
+[I 10:59:25.929 NotebookApp] Saving file at /work/Desktop/Untitled.ipynb
+[I 12:29:29.860 NotebookApp] Starting buffering for 8248ecf3-ea0b-4e87-921c-781bafd59cef:f2dbaa61adc24e0f88e877baf578bd8b
+[W 12:29:34.633 NotebookApp] Forbidden
+[W 12:29:34.636 NotebookApp] 403 GET /api/sessions?_=1543834025149 (172.17.0.1) 7.90ms referer=http://localhost:8888/tree/work/Documents/JuliaCourse/dataDay1
+[W 12:29:34.639 NotebookApp] Forbidden
+[W 12:29:34.643 NotebookApp] 403 GET /api/terminals?_=1543834025150 (172.17.0.1) 4.65ms referer=http://localhost:8888/tree/work/Documents/JuliaCourse/dataDay1
+[W 12:30:34.635 NotebookApp] Forbidden
+[W 12:30:34.638 NotebookApp] 403 GET /api/sessions?_=1543834025151 (172.17.0.1) 3.92ms referer=http://localhost:8888/tree/work/Documents/JuliaCourse/dataDay1
+[W 12:30:34.641 NotebookApp] Forbidden
+[W 12:30:34.644 NotebookApp] 403 GET /api/terminals?_=1543834025152 (172.17.0.1) 3.41ms referer=http://localhost:8888/tree/work/Documents/JuliaCourse/dataDay1
+[W 12:32:09.768 NotebookApp] Forbidden
+[W 12:32:09.772 NotebookApp] 403 GET /api/sessions?_=1543834025153 (172.17.0.1) 5.33ms referer=http://localhost:8888/tree/work/Documents/JuliaCourse/dataDay1
+[W 12:32:09.782 NotebookApp] Forbidden
+[W 12:32:09.786 NotebookApp] 403 GET /api/terminals?_=1543834025154 (172.17.0.1) 7.86ms referer=http://localhost:8888/tree/work/Documents/JuliaCourse/dataDay1
+[W 12:32:49.270 NotebookApp] Forbidden
+[W 12:32:49.271 NotebookApp] 403 GET /api/contents/work?type=directory&_=1543834025155 (172.17.0.1) 1.78ms referer=http://localhost:8888/tree/work
+[W 12:32:52.542 NotebookApp] Forbidden
+[W 12:32:52.543 NotebookApp] 403 GET /api/contents?type=directory&_=1543834025156 (172.17.0.1) 4.91ms referer=http://localhost:8888/tree
+[W 12:33:04.904 NotebookApp] Forbidden
+[W 12:33:04.905 NotebookApp] 403 GET /api/contents?type=directory&_=1543834025157 (172.17.0.1) 4.33ms referer=http://localhost:8888/tree
+[W 12:33:09.758 NotebookApp] Forbidden
+[W 12:33:09.759 NotebookApp] 403 GET /api/sessions?_=1543834025158 (172.17.0.1) 2.23ms referer=http://localhost:8888/tree
+[W 12:33:09.763 NotebookApp] Forbidden
+[W 12:33:09.765 NotebookApp] 403 GET /api/terminals?_=1543834025159 (172.17.0.1) 3.36ms referer=http://localhost:8888/tree
+[W 12:33:12.853 NotebookApp] Forbidden
+[W 12:33:12.854 NotebookApp] 403 GET /api/contents/work?type=directory&_=1543834025160 (172.17.0.1) 2.03ms referer=http://localhost:8888/tree
+[W 12:33:14.047 NotebookApp] Forbidden
+[W 12:33:14.048 NotebookApp] 403 GET /api/contents/work?type=directory&_=1543834025161 (172.17.0.1) 1.33ms referer=http://localhost:8888/tree/work
+[W 12:33:21.674 NotebookApp] Forbidden
+[W 12:33:21.676 NotebookApp] 403 GET /api/contents/work/Documents/JuliaCourse/dataDay1?type=directory&_=1543834025162 (172.17.0.1) 3.29ms referer=http://localhost:8888/tree/work/Documents/JuliaCourse/dataDay1
+[W 12:33:28.756 NotebookApp] Forbidden
+[W 12:33:28.758 NotebookApp] 403 GET /api/contents/work/Documents/JuliaCourse?type=directory&_=1543834025163 (172.17.0.1) 3.43ms referer=http://localhost:8888/tree/work/Documents/JuliaCourse
+[W 12:33:30.125 NotebookApp] Forbidden
+[W 12:33:30.125 NotebookApp] 403 GET /api/contents/work/Documents?type=directory&_=1543834025164 (172.17.0.1) 1.73ms referer=http://localhost:8888/tree/work/Documents
+[W 12:33:32.851 NotebookApp] Forbidden
+[W 12:33:32.855 NotebookApp] 403 GET /api/contents/work?type=directory&_=1543834025165 (172.17.0.1) 6.37ms referer=http://localhost:8888/tree/work
+[W 12:33:35.089 NotebookApp] Forbidden
+[W 12:33:35.092 NotebookApp] 403 GET /api/contents?type=directory&_=1543834025166 (172.17.0.1) 4.58ms referer=http://localhost:8888/tree
+[W 12:33:37.186 NotebookApp] Forbidden
+[W 12:33:37.187 NotebookApp] 403 GET /api/contents?type=directory&_=1543834025167 (172.17.0.1) 4.18ms referer=http://localhost:8888/tree
+[W 12:34:02.754 NotebookApp] Forbidden
+[W 12:34:02.756 NotebookApp] 403 GET /api/sessions?_=1543834025168 (172.17.0.1) 2.19ms referer=http://localhost:8888/tree
+[W 12:34:05.539 NotebookApp] Forbidden
+[W 12:34:05.542 NotebookApp] 403 GET /api/sessions?_=1543834025169 (172.17.0.1) 3.52ms referer=http://localhost:8888/tree
+[W 12:34:09.466 NotebookApp] Forbidden
+[W 12:34:09.468 NotebookApp] 403 GET /api/contents?type=directory&_=1543834025170 (172.17.0.1) 5.20ms referer=http://localhost:8888/tree
+[W 12:34:09.759 NotebookApp] Forbidden
+[W 12:34:09.760 NotebookApp] 403 GET /api/sessions?_=1543834025171 (172.17.0.1) 3.67ms referer=http://localhost:8888/tree
+[W 12:34:09.765 NotebookApp] Forbidden
+[W 12:34:09.767 NotebookApp] 403 GET /api/terminals?_=1543834025172 (172.17.0.1) 2.77ms referer=http://localhost:8888/tree
+[W 12:34:15.644 NotebookApp] Forbidden
+[W 12:34:15.647 NotebookApp] 403 GET /api/contents/work?type=directory&_=1543834025173 (172.17.0.1) 7.56ms referer=http://localhost:8888/tree
+[W 12:34:19.393 NotebookApp] Forbidden
+[W 12:34:19.395 NotebookApp] 403 GET /api/contents/work?type=directory&_=1543834025174 (172.17.0.1) 2.32ms referer=http://localhost:8888/tree/work
+[W 12:34:20.990 NotebookApp] Forbidden
+[W 12:34:20.992 NotebookApp] 403 GET /api/contents?type=directory&_=1543834025175 (172.17.0.1) 4.36ms referer=http://localhost:8888/tree
+[W 12:34:25.098 NotebookApp] Forbidden
+[W 12:34:25.098 NotebookApp] 403 GET /api/contents/work?type=directory&_=1543834025176 (172.17.0.1) 4.88ms referer=http://localhost:8888/tree
+[W 12:34:29.479 NotebookApp] Forbidden
+[W 12:34:29.481 NotebookApp] 403 GET /api/contents/work?type=directory&_=1543834025177 (172.17.0.1) 1.98ms referer=http://localhost:8888/tree
+[W 12:34:48.566 NotebookApp] Forbidden
+[W 12:34:48.568 NotebookApp] 403 GET /api/sessions?_=1543834025178 (172.17.0.1) 3.14ms referer=http://localhost:8888/tree
+[W 12:34:48.572 NotebookApp] Forbidden
+[W 12:34:48.574 NotebookApp] 403 GET /api/terminals?_=1543834025179 (172.17.0.1) 3.22ms referer=http://localhost:8888/tree
+[W 12:34:54.701 NotebookApp] Forbidden
+[W 12:34:54.703 NotebookApp] 403 GET /api/sessions?_=1543834025180 (172.17.0.1) 2.63ms referer=http://localhost:8888/tree
+[W 12:34:57.546 NotebookApp] Forbidden
+[W 12:34:57.549 NotebookApp] 403 GET /api/sessions?_=1543834025181 (172.17.0.1) 5.35ms referer=http://localhost:8888/tree
+[W 12:35:09.090 NotebookApp] Forbidden
+[W 12:35:09.092 NotebookApp] 403 GET /api/contents?type=directory&_=1543834025182 (172.17.0.1) 3.23ms referer=http://localhost:8888/tree
+[W 12:35:48.569 NotebookApp] Forbidden
+[W 12:35:48.569 NotebookApp] 403 GET /api/sessions?_=1543834025183 (172.17.0.1) 2.86ms referer=http://localhost:8888/tree
+[W 12:35:48.572 NotebookApp] Forbidden
+[W 12:35:48.573 NotebookApp] 403 GET /api/terminals?_=1543834025184 (172.17.0.1) 1.44ms referer=http://localhost:8888/tree
+[W 12:36:35.417 NotebookApp] Forbidden
+[W 12:36:35.418 NotebookApp] 403 GET /api/sessions?_=1543834025185 (172.17.0.1) 2.09ms referer=http://localhost:8888/tree
+[W 12:36:35.423 NotebookApp] Forbidden
+[W 12:36:35.425 NotebookApp] 403 GET /api/terminals?_=1543834025186 (172.17.0.1) 3.11ms referer=http://localhost:8888/tree
+[I 12:37:04.954 NotebookApp] 302 POST /login?next=%2F (172.17.0.1) 5.90ms
+[I 12:37:04.964 NotebookApp] 302 GET / (172.17.0.1) 0.97ms
+[I 12:44:49.943 NotebookApp] Creating new notebook in /work/Documents/JuliaCourse
+[I 12:44:51.876 NotebookApp] Kernel started: 9046f909-c644-4950-b28d-e41fe346bc37
+Starting kernel event loops.
+[I 12:45:00.038 NotebookApp] Adapting to protocol v5.0 for kernel 9046f909-c644-4950-b28d-e41fe346bc37
+[W 12:45:36.412 NotebookApp] 404 GET /api/contents/work/Documents/JuliaCourse/My1stnotebook.ipynb?type=notebook&content=0&_=1543841091214 (172.17.0.1): No such file or directory: work/Documents/JuliaCourse/My1stnotebook.ipynb
+[W 12:45:36.414 NotebookApp] No such file or directory: work/Documents/JuliaCourse/My1stnotebook.ipynb
+[W 12:45:36.417 NotebookApp] 404 GET /api/contents/work/Documents/JuliaCourse/My1stnotebook.ipynb?type=notebook&content=0&_=1543841091214 (172.17.0.1) 147.47ms referer=http://localhost:8888/notebooks/work/Documents/JuliaCourse/Untitled.ipynb?kernel_name=julia-1.0
+[I 12:45:36.433 NotebookApp] Uploading file to /work/Documents/JuliaCourse/My1stnotebook.ipynb
+[I 12:49:13.003 NotebookApp] Saving file at /work/Documents/JuliaCourse/My1stnotebook.ipynb
+[I 12:49:13.262 NotebookApp] Saving file at /work/Documents/JuliaCourse/My1stnotebook.ipynb
+[I 13:06:53.404 NotebookApp] Saving file at /work/Documents/JuliaCourse/My1stnotebook.ipynb
+[I 13:08:54.959 NotebookApp] Creating new notebook in /work/Documents/JuliaCourse
+[I 13:08:56.209 NotebookApp] Kernel started: 06631463-0bc0-4ed6-9651-db0484e0b95b
+Starting kernel event loops.
+[I 13:09:04.102 NotebookApp] Adapting to protocol v5.0 for kernel 06631463-0bc0-4ed6-9651-db0484e0b95b
+[I 13:09:59.594 NotebookApp] Starting buffering for 9046f909-c644-4950-b28d-e41fe346bc37:08d271d09ca749f287650d6913a69e30
+[I 13:10:04.844 NotebookApp] Kernel shutdown: 9046f909-c644-4950-b28d-e41fe346bc37
+[I 13:11:00.828 NotebookApp] Saving file at /work/Documents/JuliaCourse/Untitled1.ipynb
+[I 13:13:00.807 NotebookApp] Saving file at /work/Documents/JuliaCourse/Untitled1.ipynb
+[I 13:17:00.689 NotebookApp] Saving file at /work/Documents/JuliaCourse/Untitled1.ipynb
+[I 13:19:00.820 NotebookApp] Saving file at /work/Documents/JuliaCourse/Untitled1.ipynb
+[W 13:20:38.787 NotebookApp] Notebook work/Documents/Julia/day1/notebook_IO_dataFrames.ipynb is not trusted
+[I 13:20:40.214 NotebookApp] Kernel started: 1dab20fb-9d1b-41a4-b380-929cacbaf03d
+[W 13:20:40.231 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_IO_dataFrames.ipynb/checkpoints?_=1543843238340 (172.17.0.1): Permission denied: work/Documents/Julia/day1/.ipynb_checkpoints
+[W 13:20:40.234 NotebookApp] Permission denied: work/Documents/Julia/day1/.ipynb_checkpoints
+[W 13:20:40.237 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_IO_dataFrames.ipynb/checkpoints?_=1543843238340 (172.17.0.1) 15.00ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_IO_dataFrames.ipynb
+Starting kernel event loops.
+[I 13:20:47.611 NotebookApp] Adapting to protocol v5.0 for kernel 1dab20fb-9d1b-41a4-b380-929cacbaf03d
+[I 13:22:00.452 NotebookApp] Starting buffering for 06631463-0bc0-4ed6-9651-db0484e0b95b:84c268d609e44bf296ae08643895ea28
+[I 13:22:05.643 NotebookApp] Kernel shutdown: 06631463-0bc0-4ed6-9651-db0484e0b95b
+[W 13:31:29.721 NotebookApp] 404 GET /static/components/codemirror/mode/jldoctest/jldoctest.js?v=20181203104634 (172.17.0.1) 78.15ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_IO_dataFrames.ipynb
+[W 13:45:06.837 NotebookApp] Notebook work/Documents/Julia/day1/notebook_IO_dataFrames.ipynb is not trusted
+[W 13:45:06.873 NotebookApp] Trusting notebook /work/Documents/Julia/day1/notebook_IO_dataFrames.ipynb
+[W 14:30:19.143 NotebookApp] 404 GET /api/contents/work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb?type=notebook&content=0&_=1543843238341 (172.17.0.1): No such file or directory: work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb
+[W 14:30:19.147 NotebookApp] No such file or directory: work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb
+[W 14:30:19.148 NotebookApp] 404 GET /api/contents/work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb?type=notebook&content=0&_=1543843238341 (172.17.0.1) 158.92ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_IO_dataFrames.ipynb
+[I 14:30:19.185 NotebookApp] Uploading file to /work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb
+[W 14:30:19.253 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb (172.17.0.1): Permission denied: work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb
+[W 14:30:19.254 NotebookApp] Permission denied: work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb
+[W 14:30:19.255 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb (172.17.0.1) 79.69ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_IO_dataFrames.ipynb
+[W 14:30:34.917 NotebookApp] 404 GET /api/contents/work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb?type=notebook&content=0&_=1543843238342 (172.17.0.1): No such file or directory: work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb
+[W 14:30:34.920 NotebookApp] No such file or directory: work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb
+[W 14:30:34.922 NotebookApp] 404 GET /api/contents/work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb?type=notebook&content=0&_=1543843238342 (172.17.0.1) 9.47ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_IO_dataFrames.ipynb
+[I 14:30:34.941 NotebookApp] Uploading file to /work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb
+[W 14:30:34.958 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb (172.17.0.1): Permission denied: work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb
+[W 14:30:34.959 NotebookApp] Permission denied: work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb
+[W 14:30:34.960 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notbook_IO_dataFrames_MH.ipynb (172.17.0.1) 26.29ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_IO_dataFrames.ipynb
+[W 14:31:27.022 NotebookApp] Notebook work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb is not trusted
+[I 14:31:30.252 NotebookApp] Kernel started: 17ed2d14-0017-41f1-b98b-98555c6bcab3
+[W 14:31:30.270 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb/checkpoints?_=1543847486533 (172.17.0.1): Permission denied: work/Documents/Julia/day1/.ipynb_checkpoints
+[W 14:31:30.272 NotebookApp] Permission denied: work/Documents/Julia/day1/.ipynb_checkpoints
+[W 14:31:30.274 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb/checkpoints?_=1543847486533 (172.17.0.1) 13.01ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+Starting kernel event loops.
+[I 14:31:38.750 NotebookApp] Adapting to protocol v5.0 for kernel 17ed2d14-0017-41f1-b98b-98555c6bcab3
+[I 14:39:16.546 NotebookApp] Starting buffering for 17ed2d14-0017-41f1-b98b-98555c6bcab3:3a8b6c11242e4ef98be18f4b170dee08
+[W 14:39:19.752 NotebookApp] Forbidden
+[W 14:39:19.754 NotebookApp] 403 GET /api/sessions?_=1543840625091 (172.17.0.1) 3.32ms referer=http://localhost:8888/tree/work/Documents/Julia/day1
+[W 14:39:19.758 NotebookApp] Forbidden
+[W 14:39:19.763 NotebookApp] 403 GET /api/terminals?_=1543840625092 (172.17.0.1) 5.59ms referer=http://localhost:8888/tree/work/Documents/Julia/day1
+[I 14:39:30.947 NotebookApp] 302 GET /notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 3.88ms
+[I 14:41:02.882 NotebookApp] 302 POST /login?next=%2Fnotebooks%2Fwork%2FDocuments%2FJulia%2Fday1%2Fnotebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 2.10ms
+[W 14:41:03.970 NotebookApp] Notebook work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb is not trusted
+[I 14:41:07.129 NotebookApp] Adapting to protocol v5.0 for kernel 17ed2d14-0017-41f1-b98b-98555c6bcab3
+[I 14:47:07.268 NotebookApp] Saving file at /work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 14:47:07.278 NotebookApp] Notebook work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb is not trusted
+[I 14:47:47.722 NotebookApp] Saving file at /work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 14:47:48.387 NotebookApp] Trusting notebook /work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[I 14:49:12.529 NotebookApp] Saving file at /work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[I 14:51:12.457 NotebookApp] Saving file at /work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[I 15:12:44.152 NotebookApp] Saving file at /work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[I 15:16:22.136 NotebookApp] New terminal with automatic name: 1
+TermSocket.open: 1
+TermSocket.open: Opened 1
+Websocket closed
+[W 15:16:43.282 NotebookApp] Forbidden
+[W 15:16:43.286 NotebookApp] 403 GET /api/sessions?_=1543850136677 (172.17.0.1) 6.89ms referer=http://localhost:8888/tree
+[W 15:16:43.293 NotebookApp] Forbidden
+[W 15:16:43.295 NotebookApp] 403 GET /api/terminals?_=1543850136678 (172.17.0.1) 3.39ms referer=http://localhost:8888/tree
+[W 15:16:47.121 NotebookApp] Forbidden
+[W 15:16:47.123 NotebookApp] 403 POST /api/contents (172.17.0.1) 13.29ms referer=http://localhost:8888/tree
+[W 15:17:17.327 NotebookApp] Forbidden
+[W 15:17:17.340 NotebookApp] 403 GET /api/sessions?_=1543850136679 (172.17.0.1) 19.37ms referer=http://localhost:8888/tree
+[W 15:17:17.365 NotebookApp] Forbidden
+[W 15:17:17.369 NotebookApp] 403 GET /api/terminals?_=1543850136680 (172.17.0.1) 11.46ms referer=http://localhost:8888/tree
+[W 15:18:25.649 NotebookApp] Forbidden
+[W 15:18:25.652 NotebookApp] 403 POST /api/kernels/17ed2d14-0017-41f1-b98b-98555c6bcab3/interrupt (172.17.0.1) 6.29ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:32:27.815 NotebookApp] Forbidden
+[W 15:32:28.657 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063475 (172.17.0.1) 3759.29ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:32:30.386 NotebookApp] Forbidden
+[W 15:32:30.406 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 480.32ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:34:21.186 NotebookApp] Forbidden
+[W 15:34:21.194 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063476 (172.17.0.1) 17.58ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:34:21.310 NotebookApp] Forbidden
+[W 15:34:21.312 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 20.03ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:35:28.534 NotebookApp] Forbidden
+[W 15:35:28.535 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063477 (172.17.0.1) 287.14ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:35:28.653 NotebookApp] Forbidden
+[W 15:35:28.655 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 24.59ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:35:43.390 NotebookApp] Forbidden
+[W 15:35:43.392 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063478 (172.17.0.1) 2.47ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:35:43.443 NotebookApp] Forbidden
+[W 15:35:43.445 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 35.17ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:35:56.162 NotebookApp] Forbidden
+[W 15:35:56.167 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063479 (172.17.0.1) 8.33ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:35:56.676 NotebookApp] Forbidden
+[W 15:35:56.679 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 25.11ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:35:56.745 NotebookApp] Forbidden
+[W 15:35:56.747 NotebookApp] 403 POST /api/contents/work/Documents/Julia/day1 (172.17.0.1) 3.70ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:36:14.096 NotebookApp] Forbidden
+[W 15:36:14.100 NotebookApp] 403 GET /api/sessions?_=1543850136681 (172.17.0.1) 40.59ms referer=http://localhost:8888/tree
+[W 15:36:14.280 NotebookApp] Forbidden
+[W 15:36:14.286 NotebookApp] 403 GET /api/terminals?_=1543850136682 (172.17.0.1) 4.69ms referer=http://localhost:8888/tree
+[W 15:36:21.118 NotebookApp] Forbidden
+[W 15:36:21.120 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063480 (172.17.0.1) 39.23ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:36:21.180 NotebookApp] Forbidden
+[W 15:36:21.181 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 23.44ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:37:36.878 NotebookApp] Forbidden
+[W 15:37:36.915 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063481 (172.17.0.1) 38.41ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:37:36.952 NotebookApp] Forbidden
+[W 15:37:36.955 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 17.08ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:38:21.067 NotebookApp] Forbidden
+[W 15:38:21.070 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063482 (172.17.0.1) 4.37ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:38:21.122 NotebookApp] Forbidden
+[W 15:38:21.123 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 4.84ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:40:21.053 NotebookApp] Forbidden
+[W 15:40:21.056 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063483 (172.17.0.1) 5.73ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:40:21.086 NotebookApp] Forbidden
+[W 15:40:21.119 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 43.76ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:42:21.049 NotebookApp] Forbidden
+[W 15:42:21.052 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063484 (172.17.0.1) 5.00ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:42:21.107 NotebookApp] Forbidden
+[W 15:42:21.110 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 8.50ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:44:21.053 NotebookApp] Forbidden
+[W 15:44:21.054 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063485 (172.17.0.1) 4.45ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:44:21.108 NotebookApp] Forbidden
+[W 15:44:21.110 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 9.24ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:46:21.057 NotebookApp] Forbidden
+[W 15:46:21.060 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063486 (172.17.0.1) 3.63ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:46:21.112 NotebookApp] Forbidden
+[W 15:46:21.114 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 9.95ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:47:38.287 NotebookApp] Forbidden
+[W 15:47:38.290 NotebookApp] 403 POST /api/contents/work/Documents/Julia/day1 (172.17.0.1) 5.83ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:48:24.045 NotebookApp] Forbidden
+[W 15:48:24.046 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063487 (172.17.0.1) 2.82ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:48:24.156 NotebookApp] Forbidden
+[W 15:48:24.158 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 7.55ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:50:00.635 NotebookApp] Forbidden
+[W 15:50:00.703 NotebookApp] 403 GET /api/terminals?_=1543850136684 (172.17.0.1) 69.74ms referer=http://localhost:8888/tree
+[W 15:50:00.748 NotebookApp] Forbidden
+[W 15:50:00.750 NotebookApp] 403 GET /api/sessions?_=1543850136683 (172.17.0.1) 2.90ms referer=http://localhost:8888/tree
+[W 15:50:03.748 NotebookApp] Forbidden
+[W 15:50:03.750 NotebookApp] 403 GET /api/contents/work?type=directory&_=1543850136685 (172.17.0.1) 4.90ms referer=http://localhost:8888/tree/work
+[W 15:50:12.153 NotebookApp] Forbidden
+[W 15:50:12.154 NotebookApp] 403 GET /api/sessions?_=1543850136686 (172.17.0.1) 3.05ms referer=http://localhost:8888/tree/work
+[W 15:50:12.158 NotebookApp] Forbidden
+[W 15:50:12.159 NotebookApp] 403 GET /api/terminals?_=1543850136687 (172.17.0.1) 1.89ms referer=http://localhost:8888/tree/work
+[W 15:50:24.584 NotebookApp] 403 POST /api/shutdown (172.17.0.1) 989.93ms referer=http://localhost:8888/tree/work
+[W 15:50:24.668 NotebookApp] Forbidden
+[W 15:50:24.669 NotebookApp] 403 GET /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb?content=0&_=1543848063488 (172.17.0.1) 1.78ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:50:24.702 NotebookApp] Forbidden
+[W 15:50:24.703 NotebookApp] 403 PUT /api/contents/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb (172.17.0.1) 9.00ms referer=http://localhost:8888/notebooks/work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[W 15:50:31.063 NotebookApp] 403 POST /api/shutdown (172.17.0.1) 4.04ms referer=http://localhost:8888/tree/work
+[I 15:50:49.645 NotebookApp] Starting buffering for 17ed2d14-0017-41f1-b98b-98555c6bcab3:0c321b2204ab4a508be2fe8b8b08a7c8
+[I 15:51:03.610 NotebookApp] Starting buffering for 1dab20fb-9d1b-41a4-b380-929cacbaf03d:871b1b9af63a4b3c8a248da1a94e39f7
+[I 15:51:42.079 NotebookApp] 302 POST /login?next=%2F (172.17.0.1) 129.30ms
+[I 15:51:42.126 NotebookApp] 302 GET / (172.17.0.1) 28.91ms
+[I 15:52:12.544 NotebookApp] Adapting to protocol v5.0 for kernel 17ed2d14-0017-41f1-b98b-98555c6bcab3
+[I 15:54:11.146 NotebookApp] Saving file at /work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[I 15:56:11.099 NotebookApp] Saving file at /work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[I 16:09:02.032 NotebookApp] Saving file at /work/Documents/Julia/day1/notebook_StringsArraysDictPlotting.ipynb
+[I 16:09:40.754 NotebookApp] Starting buffering for 17ed2d14-0017-41f1-b98b-98555c6bcab3:e849a02495714419844087939a0bb4ec
+[W 16:10:07.087 NotebookApp] Forbidden
+[W 16:10:07.088 NotebookApp] 403 GET /api/sessions?_=1543852302418 (172.17.0.1) 3.28ms referer=http://localhost:8888/tree/work/Documents/Julia/day1
+[W 16:10:07.095 NotebookApp] Forbidden
+[W 16:10:07.097 NotebookApp] 403 GET /api/terminals?_=1543852302419 (172.17.0.1) 4.32ms referer=http://localhost:8888/tree/work/Documents/Julia/day1
+[W 16:10:15.075 NotebookApp] 403 POST /api/shutdown (172.17.0.1) 5.20ms referer=http://localhost:8888/tree/work/Documents/Julia/day1
+^C[I 16:11:09.799 NotebookApp] interrupted
+Serving notebooks from local directory: /home/jovyan
+3 active kernels
+The Jupyter Notebook is running at:
+http://(a4651d4ec41d or 127.0.0.1):8888/?token=568c1539677ae5c4c4cd4de1a9b84d38021ae94c4010d1ca
+Shutdown this notebook server (y/[n])? No answer for 5s: resuming operation...
+y
+^C[I 16:13:04.099 NotebookApp] interrupted
+Serving notebooks from local directory: /home/jovyan
+3 active kernels
+The Jupyter Notebook is running at:
+http://(a4651d4ec41d or 127.0.0.1):8888/?token=568c1539677ae5c4c4cd4de1a9b84d38021ae94c4010d1ca
+Shutdown this notebook server (y/[n])? ^C[C 16:13:05.849 NotebookApp] received signal 2, stopping
+[I 16:13:05.985 NotebookApp] Shutting down 3 kernels
+No answer for 5s: resuming operation...
+[I 16:13:12.531 NotebookApp] Kernel shutdown: 8248ecf3-ea0b-4e87-921c-781bafd59cef
+[I 16:13:18.948 NotebookApp] Kernel shutdown: 1dab20fb-9d1b-41a4-b380-929cacbaf03d
+[I 16:13:24.889 NotebookApp] Kernel shutdown: 17ed2d14-0017-41f1-b98b-98555c6bcab3
+Emiliens-MacBook-Pro:~ michael$ docker run -it --rm -p 8888:8888 -v /Users/Michael:/home/jovyan/work qtlrocks/jwas-docker
+Container must be run with group "root" to update passwd file
+Executing the command: jupyter notebook
+[I 16:15:21.704 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 16:15:23.976 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+[I 16:15:23.977 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 16:15:24.128 NotebookApp] Serving notebooks from local directory: /home/jovyan
+[I 16:15:24.129 NotebookApp] The Jupyter Notebook is running at:
+[I 16:15:24.129 NotebookApp] http://(e6f791c71d8b or 127.0.0.1):8888/?token=bcd7843e6f710f517182bb6f2d960752e531935c0f01be1d
+[I 16:15:24.129 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 16:15:24.132 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://(e6f791c71d8b or 127.0.0.1):8888/?token=bcd7843e6f710f517182bb6f2d960752e531935c0f01be1d
+[I 16:15:55.946 NotebookApp] 302 GET / (172.17.0.1) 0.86ms
+[I 16:15:56.040 NotebookApp] 302 GET /tree? (172.17.0.1) 1.41ms
+[I 16:16:06.560 NotebookApp] 302 POST /login?next=%2Ftree%3F (172.17.0.1) 2.62ms
+[I 16:16:36.641 NotebookApp] Writing notebook-signing key to /home/jovyan/.local/share/jupyter/notebook_secret
+[W 16:16:36.644 NotebookApp] Notebook notebooks/Theory/theory.ipynb is not trusted
+[I 16:16:38.933 NotebookApp] Kernel started: 799c369f-a15c-4047-bcdf-a6660c489a22
+[ Info: Recompiling stale cache file /opt/julia/compiled/v1.0/IJulia/nfu7T.ji for IJulia [7073ff75-c697-5162-941a-fcdaad2a7d2a]
+Starting kernel event loops.
+[I 16:16:58.523 NotebookApp] Adapting to protocol v5.0 for kernel 799c369f-a15c-4047-bcdf-a6660c489a22
+[I 16:17:25.508 NotebookApp] Starting buffering for 799c369f-a15c-4047-bcdf-a6660c489a22:3a971091aae74370859ed79aaaa709be
+

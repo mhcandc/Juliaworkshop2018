@@ -1,0 +1,133 @@
+Last login: Thu Dec  6 09:06:33 on ttys001
+Emiliens-MacBook-Pro:~ michael$ docker run -it --rm -p 8888:8888 -v /Users/Michael:/home/jovyan/work qtlrocks/jwas-docker
+
+
+Container must be run with group "root" to update passwd file
+Executing the command: jupyter notebook
+[I 08:43:55.134 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 08:43:58.686 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+[I 08:43:58.686 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 08:43:58.694 NotebookApp] Serving notebooks from local directory: /home/jovyan
+[I 08:43:58.695 NotebookApp] The Jupyter Notebook is running at:
+[I 08:43:58.695 NotebookApp] http://(74b797885429 or 127.0.0.1):8888/?token=597ec552e4f86e8c0e52fbfe80d57c5b316edc1beeceff5d
+[I 08:43:58.695 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 08:43:58.697 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://(74b797885429 or 127.0.0.1):8888/?token=597ec552e4f86e8c0e52fbfe80d57c5b316edc1beeceff5d
+[I 08:44:20.214 NotebookApp] 302 GET /tree? (172.17.0.1) 1.19ms
+[I 08:44:28.575 NotebookApp] 302 POST /login?next=%2Ftree%3F (172.17.0.1) 2.10ms
+[I 08:45:33.686 NotebookApp] Writing notebook-signing key to /home/jovyan/.local/share/jupyter/notebook_secret
+[W 08:45:33.695 NotebookApp] Notebook work/Documents/Julia/day4/AInverse.ipynb is not trusted
+[I 08:45:37.938 NotebookApp] Kernel started: 5430ec05-351f-4705-8c07-569be20d6bb1
+[ Info: Recompiling stale cache file /opt/julia/compiled/v1.0/IJulia/nfu7T.ji for IJulia [7073ff75-c697-5162-941a-fcdaad2a7d2a]
+Starting kernel event loops.
+[I 08:46:09.361 NotebookApp] Adapting to protocol v5.0 for kernel 5430ec05-351f-4705-8c07-569be20d6bb1
+[W 08:46:09.446 NotebookApp] zmq message arrived on closed channel
+[I 08:46:09.547 NotebookApp] Adapting to protocol v5.0 for kernel 5430ec05-351f-4705-8c07-569be20d6bb1
+[I 08:57:42.573 NotebookApp] Saving file at /work/Documents/Julia/day4/AInverse.ipynb
+[W 08:57:42.589 NotebookApp] Notebook work/Documents/Julia/day4/AInverse.ipynb is not trusted
+[I 09:16:24.260 NotebookApp] Kernel interrupted: 5430ec05-351f-4705-8c07-569be20d6bb1
+[I 09:16:36.151 NotebookApp] Starting buffering for 5430ec05-351f-4705-8c07-569be20d6bb1:c6954f6a47d6406eb2aaa243c1394c7c
+[I 09:16:43.241 NotebookApp] Kernel restarted: 5430ec05-351f-4705-8c07-569be20d6bb1
+[W 09:16:43.289 NotebookApp] zmq message arrived on closed channel
+[W 09:16:49.971 NotebookApp] zmq message arrived on closed channel
+Starting kernel event loops.
+[W 09:16:51.657 NotebookApp] zmq message arrived on closed channel
+[W 09:16:51.993 NotebookApp] zmq message arrived on closed channel
+[I 09:16:52.009 NotebookApp] Adapting to protocol v5.0 for kernel 5430ec05-351f-4705-8c07-569be20d6bb1
+[I 09:16:52.014 NotebookApp] Restoring connection for 5430ec05-351f-4705-8c07-569be20d6bb1:c6954f6a47d6406eb2aaa243c1394c7c
+[I 09:16:52.016 NotebookApp] Replaying 4 buffered messages
+[I 09:17:42.869 NotebookApp] Saving file at /work/Documents/Julia/day4/AInverse.ipynb
+[W 09:17:42.875 NotebookApp] Notebook work/Documents/Julia/day4/AInverse.ipynb is not trusted
+[W 09:23:21.689 NotebookApp] Notebook work/Documents/Julia/day4/AInverse.ipynb is not trusted
+[W 09:23:21.739 NotebookApp] Trusting notebook /work/Documents/Julia/day4/AInverse.ipynb
+[I 09:23:25.038 NotebookApp] Starting buffering for 5430ec05-351f-4705-8c07-569be20d6bb1:c6954f6a47d6406eb2aaa243c1394c7c
+[I 09:23:30.341 NotebookApp] Adapting to protocol v5.0 for kernel 5430ec05-351f-4705-8c07-569be20d6bb1
+[W 09:23:30.365 NotebookApp] zmq message arrived on closed channel
+[W 09:23:30.378 NotebookApp] zmq message arrived on closed channel
+[W 09:23:30.914 NotebookApp] zmq message arrived on closed channel
+[W 09:23:31.672 NotebookApp] zmq message arrived on closed channel
+[W 09:23:31.677 NotebookApp] zmq message arrived on closed channel
+[W 09:23:44.460 NotebookApp] zmq message arrived on closed channel
+[W 09:23:46.198 NotebookApp] zmq message arrived on closed channel
+[W 09:23:52.896 NotebookApp] zmq message arrived on closed channel
+[W 09:23:53.036 NotebookApp] zmq message arrived on closed channel
+[W 09:24:13.420 NotebookApp] zmq message arrived on closed channel
+[W 09:24:13.873 NotebookApp] zmq message arrived on closed channel
+[W 09:24:14.737 NotebookApp] zmq message arrived on closed channel
+[W 09:24:14.858 NotebookApp] zmq message arrived on closed channel
+[I 09:25:29.962 NotebookApp] Saving file at /work/Documents/Julia/day4/AInverse.ipynb
+[I 10:44:50.640 NotebookApp] Starting buffering for 5430ec05-351f-4705-8c07-569be20d6bb1:e9bd5494a4854ffe9762f234e6b9dfe0
+[W 12:49:27.142 NotebookApp] Forbidden
+[W 12:49:27.148 NotebookApp] 403 GET /api/sessions?_=1544085869484 (172.17.0.1) 16.49ms referer=http://localhost:8888/tree/work/Documents/Julia/day4
+[W 12:49:27.165 NotebookApp] Forbidden
+[W 12:49:27.167 NotebookApp] 403 GET /api/terminals?_=1544085869485 (172.17.0.1) 2.55ms referer=http://localhost:8888/tree/work/Documents/Julia/day4
+[I 12:49:30.281 NotebookApp] 302 GET /notebooks/work/Documents/Julia/day4/AInverse.ipynb (172.17.0.1) 33.92ms
+597ec552e4f86e8c0e52fbfe80d57c5b316edc1beeceff5d597ec552e4f86e8c0e52fbfe80d57c5b316edc1beeceff5d[W 12:51:09.693 NotebookApp] 401 POST /login?next=%2Fnotebooks%2Fwork%2FDocuments%2FJulia%2Fday4%2FAInverse.ipynb (172.17.0.1) 3.70ms referer=http://localhost:8888/login?next=%2Fnotebooks%2Fwork%2FDocuments%2FJulia%2Fday4%2FAInverse.ipynb
+[W 12:51:28.069 NotebookApp] Forbidden
+[W 12:51:28.070 NotebookApp] 403 GET /api/sessions?_=1544085869486 (172.17.0.1) 4.29ms referer=http://localhost:8888/tree/work/Documents/Julia/day4
+[W 12:51:28.078 NotebookApp] Forbidden
+[W 12:51:28.080 NotebookApp] 403 GET /api/terminals?_=1544085869487 (172.17.0.1) 5.70ms referer=http://localhost:8888/tree/work/Documents/Julia/day4
+[I 12:51:34.076 NotebookApp] 302 GET /notebooks/work/Documents/Julia/day4/AInverse.ipynb (172.17.0.1) 1.15ms
+^C[I 12:51:57.411 NotebookApp] interrupted
+Serving notebooks from local directory: /home/jovyan
+1 active kernel
+The Jupyter Notebook is running at:
+http://(74b797885429 or 127.0.0.1):8888/?token=597ec552e4f86e8c0e52fbfe80d57c5b316edc1beeceff5d
+Shutdown this notebook server (y/[n])? ^C[C 12:51:58.250 NotebookApp] received signal 2, stopping
+[I 12:51:58.304 NotebookApp] Shutting down 1 kernel
+No answer for 5s: resuming operation...
+[I 12:52:03.814 NotebookApp] Kernel shutdown: 5430ec05-351f-4705-8c07-569be20d6bb1
+Emiliens-MacBook-Pro:~ michael$ docker run -it --rm -p 8888:8888 -v /Users/Michael:/home/jovyan/work qtlrocks/jwas-docker
+Container must be run with group "root" to update passwd file
+Executing the command: jupyter notebook
+[I 12:52:34.859 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 12:52:36.564 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+[I 12:52:36.564 NotebookApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 12:52:36.568 NotebookApp] Serving notebooks from local directory: /home/jovyan
+[I 12:52:36.569 NotebookApp] The Jupyter Notebook is running at:
+[I 12:52:36.569 NotebookApp] http://(ba5a92b665ae or 127.0.0.1):8888/?token=ab1d6458df037c8c8f7a6221c6b7f2038ac7f06ecdddb3e9
+[I 12:52:36.569 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 12:52:36.571 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://(ba5a92b665ae or 127.0.0.1):8888/?token=ab1d6458df037c8c8f7a6221c6b7f2038ac7f06ecdddb3e9
+[I 12:52:57.004 NotebookApp] 302 POST /login?next=%2Fnotebooks%2Fwork%2FDocuments%2FJulia%2Fday4%2FAInverse.ipynb (172.17.0.1) 3.04ms
+[I 12:52:58.997 NotebookApp] Writing notebook-signing key to /home/jovyan/.local/share/jupyter/notebook_secret
+[W 12:52:59.003 NotebookApp] Notebook work/Documents/Julia/day4/AInverse.ipynb is not trusted
+[I 12:53:01.940 NotebookApp] Kernel started: e61b9a06-82ac-4c23-989a-b82d84343db9
+[I 12:53:03.203 NotebookApp] Adapting to protocol v5.1 for kernel e61b9a06-82ac-4c23-989a-b82d84343db9
+[I 12:55:01.877 NotebookApp] Saving file at /work/Documents/Julia/day4/AInverse.ipynb
+[W 12:55:01.881 NotebookApp] Notebook work/Documents/Julia/day4/AInverse.ipynb is not trusted
+[I 13:00:42.671 NotebookApp] Starting buffering for e61b9a06-82ac-4c23-989a-b82d84343db9:7d81c66dad154a4986d5d5ff845b3bb2
+[I 13:00:42.990 NotebookApp] Kernel shutdown: e61b9a06-82ac-4c23-989a-b82d84343db9
+[I 13:00:43.064 NotebookApp] Kernel started: 4a179622-98fe-4ec4-b4a8-7c2fb7a6d5a8
+[ Info: Recompiling stale cache file /opt/julia/compiled/v1.0/IJulia/nfu7T.ji for IJulia [7073ff75-c697-5162-941a-fcdaad2a7d2a]
+Starting kernel event loops.
+[I 13:00:55.903 NotebookApp] Adapting to protocol v5.0 for kernel 4a179622-98fe-4ec4-b4a8-7c2fb7a6d5a8
+[I 13:01:20.673 NotebookApp] Saving file at /work/Documents/Julia/day4/AInverse.ipynb
+[W 13:01:20.676 NotebookApp] Notebook work/Documents/Julia/day4/AInverse.ipynb is not trusted
+[W 14:35:37.036 NotebookApp] Notebook work/Documents/Julia/day4/conditionNumber.ipynb is not trusted
+[I 14:35:38.890 NotebookApp] Kernel started: 6a00e43b-d410-4d1e-9ae7-d033aeec2385
+Starting kernel event loops.
+[I 14:35:48.711 NotebookApp] Adapting to protocol v5.0 for kernel 6a00e43b-d410-4d1e-9ae7-d033aeec2385
+[I 15:40:44.439 NotebookApp] Starting buffering for 6a00e43b-d410-4d1e-9ae7-d033aeec2385:ef5fb9717b1b49a694e9c0ec2c64bd50
+[I 15:41:22.175 NotebookApp] Starting buffering for 4a179622-98fe-4ec4-b4a8-7c2fb7a6d5a8:7d81c66dad154a4986d5d5ff845b3bb2
+[W 15:41:24.715 NotebookApp] Forbidden
+[W 15:41:24.721 NotebookApp] 403 GET /api/sessions?_=1544085869500 (172.17.0.1) 7.01ms referer=http://localhost:8888/tree/work/Documents/Julia/day4
+[W 15:41:24.725 NotebookApp] Forbidden
+[W 15:41:24.727 NotebookApp] 403 GET /api/terminals?_=1544085869501 (172.17.0.1) 3.13ms referer=http://localhost:8888/tree/work/Documents/Julia/day4
+^C[I 15:43:15.331 NotebookApp] interrupted
+Serving notebooks from local directory: /home/jovyan
+2 active kernels
+The Jupyter Notebook is running at:
+http://(ba5a92b665ae or 127.0.0.1):8888/?token=ab1d6458df037c8c8f7a6221c6b7f2038ac7f06ecdddb3e9
+Shutdown this notebook server (y/[n])? ^C[C 15:43:15.838 NotebookApp] received signal 2, stopping
+[I 15:43:15.840 NotebookApp] Shutting down 2 kernels
+No answer for 5s: resuming operation...
+[I 15:43:21.249 NotebookApp] Kernel shutdown: 4a179622-98fe-4ec4-b4a8-7c2fb7a6d5a8
+[I 15:43:26.363 NotebookApp] Kernel shutdown: 6a00e43b-d410-4d1e-9ae7-d033aeec2385
+Emiliens-MacBook-Pro:~ michael$ 
